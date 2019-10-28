@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <h1>All Photos</h1>
-    <div v-for="photo in photos">
-      <h2>{{ photo.name }}</h2>
-      <img v-bind:src="photo.url" />
-      <p>Width: {{ photo.width }}</p>
-      <p>Height: {{ photo.height }}</p>
+    <h1>All products</h1>
+    <div v-for="product in products">
+      <h2>{{ product.name }}</h2>
+      <img v-bind:src="product.url" />
+      <p>Width: {{ product.width }}</p>
+      <p>Height: {{ product.height }}</p>
     </div>
   </div>
 </template>
@@ -16,12 +16,12 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      photos: []
+      products: []
     };
   },
   created: function() {
-    axios.get("/api/photos").then(response => {
-      this.photos = response.data;
+    axios.get("/api/products").then(response => {
+      this.products = response.data;
     });
   },
   methods: {}
