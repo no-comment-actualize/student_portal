@@ -55,7 +55,7 @@ export default {
   },
 
   created: function() {
-    axios.get("/api/experiences/" + this.experience.id).then(response => {
+    axios.get("/api/experiences/" + this.$route.params.id).then(response => {
       this.experience = response.data;
       console.log(this.experience);
     });
@@ -64,17 +64,17 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        start_date: this.startDate,
-        end_date: this.endDate,
-        job_title: this.jobTitle,
-        company: this.company,
-        deatils: this.deatils,
-        student_id: this.studentId
+        start_date: this.experience.startDate,
+        end_date: this.experience.endDate,
+        job_title: this.experience.jobTitle,
+        company: this.experience.company,
+        deatils: this.experience.deatils,
+        student_id: this.experience.studentId
       };
       axios
-        .post("/api/experiences", params)
+        .post("/api/experiences" + this.experience.id, params)
         .then(response => {
-          this.$router.push("/students/:id");
+          this.$router.push("/students/" + this.experience.id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
@@ -83,7 +83,7 @@ export default {
     destoryExperience: function(experience) {
       axios.delete("/api/experiences/" + this.experience.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/students/:id");
+        this.$router.push("/students/" + this.experience.id);
       });
     }
   }

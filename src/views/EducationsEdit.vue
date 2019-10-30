@@ -51,7 +51,7 @@ export default {
   },
 
   created: function() {
-    axios.get("/api/educations/" + this.education.id).then(response => {
+    axios.get("/api/educations/" + this.$route.params.id).then(response => {
       this.education = response.data;
       console.log(this.education);
     });
@@ -60,25 +60,25 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        start_date: this.startDate,
-        end_date: this.endDate,
-        degree: this.degree,
-        university: this.university,
-        deatils: this.deatils
+        start_date: this.education.startDate,
+        end_date: this.education.endDate,
+        degree: this.education.degree,
+        university: this.education.university,
+        deatils: this.education.deatils
       };
       axios
-        .post("/api/educations", params)
+        .post("/api/educations" + this.education.id, params)
         .then(response => {
-          this.$router.push("/students/:id");
+          this.$router.push("/students/" + this.education.id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
         });
     },
     destoryExperience: function(experience) {
-      axios.delete("/api/experiences/" + this.experience.id).then(response => {
+      axios.delete("/api/education/" + this.education.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/students/:id");
+        this.$router.push("/students/" + this.education.id);
       });
     }
   }

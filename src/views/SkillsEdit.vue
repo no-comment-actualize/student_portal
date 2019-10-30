@@ -39,7 +39,7 @@ export default {
   },
 
   created: function() {
-    axios.get("/api/skills/" + this.skill.id).then(response => {
+    axios.get("/api/skills/" + this.$route.params.id).then(response => {
       this.skill = response.data;
       console.log(this.skill);
     });
@@ -48,22 +48,22 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
-        student_id: this.studentId
+        name: this.skill.name,
+        student_id: this.skill.studentId
       };
       axios
         .post("/api/skills", params)
         .then(response => {
-          this.$router.push("/students/:id");
+          this.$router.push("/students/" + this.skill.id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
         });
     },
     destorySkill: function(skill) {
-      axios.delete("/api/skills/" + this.skill.id).then(response => {
+      axios.delete("/api/skills/" + this.education.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/students/:id");
+        this.$router.push("/students/" + this.skill.id);
       });
     }
   }
