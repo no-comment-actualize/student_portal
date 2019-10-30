@@ -22,7 +22,7 @@
 
       <div>
         Phone Number:
-        <input type="number" v-model="student.phone_number" />
+        <input type="text" v-model="student.phone_number" />
       </div>
 
       <div>
@@ -77,7 +77,7 @@ export default {
         first_name: "Todd",
         last_name: "Bisel",
         email: "toddbisel@gmail.com",
-        phone_number: 6105470648,
+        phone_number: "6105470648",
         bio: "I am Todd",
         linkedin: "linkedin.com/toddbisel",
         twitter: "twitter.com/torvintus",
@@ -115,7 +115,7 @@ export default {
       axios
         .patch("/api/students/" + this.student.id, params)
         .then(response => {
-          this.$router.push("/show/" + this.student.id);
+          this.$router.push("/students/" + this.student.id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
