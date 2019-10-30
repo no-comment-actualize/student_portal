@@ -1,12 +1,9 @@
 <template>
   <div class="home">
-    <h1>All products</h1>
-    <div v-for="product in products">
-      <h2>{{ product.name }}</h2>
-      <img v-bind:src="product.url" />
-      <p>Width: {{ product.width }}</p>
-      <p>Height: {{ product.height }}</p>
-    </div>
+    <h1>Student</h1>
+    Hello, I am student.
+    <p>Edit Me</p>
+    <p></p>
   </div>
 </template>
 
