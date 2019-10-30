@@ -3,34 +3,34 @@
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>
-          <New>Edit Experiences</New>
+          <New>Edit Experience</New>
         </h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
           <label>Start Date:</label>
-          <input type="string" class="form-control" v-model="startDate" />
+          <input type="string" class="form-control" v-model="experiences.start_date" />
         </div>
         <div class="form-group">
           <label>End Date:</label>
-          <input type="text" class="form-control" v-model="endDate" />
+          <input type="text" class="form-control" v-model="experiences.end_date" />
         </div>
         <div class="form-group">
           <label>Job Title:</label>
-          <input type="string" class="form-control" v-model="jobTitle" />
+          <input type="string" class="form-control" v-model="experiences.job_title" />
         </div>
         <div class="form-group">
           <label>Company:</label>
-          <input type="string" class="form-control" v-model="company" />
+          <input type="string" class="form-control" v-model="experiences.company" />
         </div>
         <div class="form-group">
           <label>Detials:</label>
-          <input type="text" class="form-control" v-model="details" />
+          <input type="text" class="form-control" v-model="experiences.details" />
         </div>
         <div class="form-group">
           <label>Student ID:</label>
-          <input type="integer4" class="form-control" v-model="studentId" />
+          <input type="integer" class="form-control" v-model="experiences.student_id" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
