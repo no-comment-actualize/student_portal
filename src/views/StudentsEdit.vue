@@ -73,21 +73,9 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      student: {
-        first_name: "Todd",
-        last_name: "Bisel",
-        email: "toddbisel@gmail.com",
-        phone_number: "6105470648",
-        bio: "I am Todd",
-        linkedin: "linkedin.com/toddbisel",
-        twitter: "twitter.com/torvintus",
-        website: "toddbisel.com",
-        resume: "toddibsel.com/resume",
-        github: "github.com/toddbisel",
-        photo:
-          "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiZ6Lmsu8TlAhVHuVkKHV2SAPMQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pictame.com%2Ftag%2Fde4live&psig=AOvVaw2je3wt2-C4beK3UNm1SHp9&ust=1572541391670361"
-      },
-      errors: []
+      student: {},
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
   created: function() {

@@ -16,11 +16,7 @@ export default {
       products: []
     };
   },
-  created: function() {
-    axios.get("/api/products").then(response => {
-      this.products = response.data;
-    });
-  },
+  created: function() {},
   methods: {}
 };
 </script>
