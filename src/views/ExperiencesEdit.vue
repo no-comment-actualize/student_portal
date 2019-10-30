@@ -74,7 +74,7 @@ export default {
       axios
         .post("/api/experiences", params)
         .then(response => {
-          this.$router.push("/experiences");
+          this.$router.push("/students/:id");
         })
         .catch(error => {
           this.errors = error.response.data.errors;
@@ -83,7 +83,7 @@ export default {
     destoryExperience: function(experience) {
       axios.delete("/api/experiences/" + this.experience.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/experiences");
+        this.$router.push("/students/:id");
       });
     }
   }
