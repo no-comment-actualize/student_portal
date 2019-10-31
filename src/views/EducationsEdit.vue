@@ -25,7 +25,7 @@
           <input type="string" class="form-control" v-model="education.university" />
         </div>
         <div class="form-group">
-          <label>Detials:</label>
+          <label>Details:</label>
           <input type="text" class="form-control" v-model="education.details" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
@@ -68,7 +68,7 @@ export default {
         deatils: this.education.deatils
       };
       axios
-        .patch("/api/educations" + this.education.id, params)
+        .patch("/api/educations/" + this.education.id, params)
         .then(response => {
           this.$router.push("/students/" + this.student_id);
         })
