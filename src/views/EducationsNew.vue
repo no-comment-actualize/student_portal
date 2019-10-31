@@ -25,7 +25,7 @@
           <input type="string" class="form-control" v-model="university" />
         </div>
         <div class="form-group">
-          <label>Detials:</label>
+          <label>Details:</label>
           <input type="text" class="form-control" v-model="details" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
@@ -44,7 +44,7 @@ export default {
       endDate: "",
       degree: "",
       university: "",
-      deatils: "",
+      details: "",
       errors: []
     };
   },
@@ -56,7 +56,7 @@ export default {
         end_date: this.endDate,
         degree: this.degree,
         university: this.university,
-        deatils: this.deatils
+        details: this.details
       };
       axios
         .post("/api/educations", params)

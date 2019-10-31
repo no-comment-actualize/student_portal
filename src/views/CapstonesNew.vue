@@ -1,16 +1,28 @@
 <template>
-  <div class="skills-new">
+  <div class="capstones-new">
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>
-          <New>Add Skill</New>
+          <New>Add Capstone</New>
         </h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
           <label>Name:</label>
-          <input type="text" class="form-control" v-model="name" />
+          <input type="string" class="form-control" v-model="name" />
+        </div>
+        <div class="form-group">
+          <label>Description:</label>
+          <input type="text" class="form-control" v-model="description" />
+        </div>
+        <div class="form-group">
+          <label>Url:</label>
+          <input type="string" class="form-control" v-model="url" />
+        </div>
+        <div class="form-group">
+          <label>Screenshot:</label>
+          <input type="string" class="form-control" v-model="screenshot" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
@@ -25,7 +37,10 @@ export default {
   data: function() {
     return {
       name: "",
-      student_id: "",
+      description: "",
+      url: "",
+      screenshot: "",
+      studentId: "",
       errors: []
     };
   },
@@ -34,13 +49,16 @@ export default {
     submit: function() {
       var params = {
         name: this.name,
+        description: this.description,
+        url: this.url,
+        screenshot: this.screenshot,
         student_id: 1
       };
       axios
-        .post("/api/skills", params)
+        .post("/api/capstones", params)
         .then(response => {
           console.log(response.data);
-          this.$router.push("/students/:id");
+          this.$router.push("/students/" + this.student.id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

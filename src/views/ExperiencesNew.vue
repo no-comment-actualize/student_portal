@@ -57,7 +57,7 @@ export default {
         end_date: this.endDate,
         job_title: this.jobTitle,
         company: this.company,
-        deatils: this.deatils,
+        details: this.details,
         student_id: 1
       };
       axios
