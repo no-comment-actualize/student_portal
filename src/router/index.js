@@ -3,6 +3,9 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import StudentsShow from "../views/StudentsShow.vue";
+import EducationsEdit from "../views/EducationsEdit.vue";
+import ExperiencesEdit from "../views/ExperiencesEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +33,21 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout
+  },
+  {
+    path: "/experiences/:id/edit",
+    name: "experiences-edit",
+    component: ExperiencesEdit
+  },
+  {
+    path: "/educations/:id/edit",
+    name: "educations-edit",
+    component: EducationsEdit
+  },
+  {
+    path: "/students/:id",
+    name: "students-show",
+    component: StudentsShow
   }
 ];
 
