@@ -1,32 +1,28 @@
 <template>
-  <div class="experiences-new">
+  <div class="capstones-new">
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>
-          <New>Add Experience</New>
+          <New>Add Capstone</New>
         </h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
-          <label>Start Date:</label>
-          <input type="string" class="form-control" v-model="startDate" />
+          <label>Name:</label>
+          <input type="string" class="form-control" v-model="name" />
         </div>
         <div class="form-group">
-          <label>End Date:</label>
-          <input type="text" class="form-control" v-model="endDate" />
+          <label>Description:</label>
+          <input type="text" class="form-control" v-model="description" />
         </div>
         <div class="form-group">
-          <label>Job Title:</label>
-          <input type="string" class="form-control" v-model="jobTitle" />
+          <label>Url:</label>
+          <input type="string" class="form-control" v-model="url" />
         </div>
         <div class="form-group">
-          <label>Company:</label>
-          <input type="string" class="form-control" v-model="company" />
-        </div>
-        <div class="form-group">
-          <label>Details:</label>
-          <input type="text" class="form-control" v-model="details" />
+          <label>Screenshot:</label>
+          <input type="string" class="form-control" v-model="screenshot" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
@@ -40,11 +36,10 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      startDate: "",
-      endDate: "",
-      jobTitle: "",
-      company: "",
-      details: "",
+      name: "",
+      description: "",
+      url: "",
+      screenshot: "",
       errors: []
     };
   },
@@ -52,14 +47,13 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        start_date: this.startDate,
-        end_date: this.endDate,
-        job_title: this.jobTitle,
-        company: this.company,
-        details: this.details
+        name: this.name,
+        description: this.description,
+        url: this.url,
+        screenshot: this.screenshot
       };
       axios
-        .post("/api/experiences", params)
+        .post("/api/capstones", params)
         .then(response => {
           console.log(response.data);
           this.$router.push("/students/" + this.student.id);

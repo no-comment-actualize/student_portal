@@ -12,8 +12,7 @@
     <h2>{{ student.github }}</h2>
     <h2>{{ student.photo }}</h2>
     <router-link :to="`/students/${student.id}/edit`">Edit Student Information</router-link>
-    |
-    <router-link to="/students/new">New Student Information</router-link>
+
     <h1>Capstones</h1>
     <div v-for="capstone in student.capstones">
       <h2>{{ capstone.name }}</h2>
@@ -45,6 +44,7 @@
       <h2>{{ experience.job_title }}</h2>
       <h2>{{ experience.details }}</h2>
       <h2>{{ experience.student_id }}</h2>
+
       <router-link :to="`/experiences/${experience.id}/edit`">Edit Experience Information</router-link>
       |
       <router-link to="/experiences/new">New Experience Information</router-link>
@@ -53,6 +53,7 @@
     <div v-for="skill in student.skills">
       <h2>{{ skill.name }}</h2>
       <h2>{{ skill.student_id }}</h2>
+
       <router-link :to="`/skills/${skill.id}/edit`">Edit Skills Information</router-link>
       |
       <router-link to="/skills/new">New Skills Information</router-link>

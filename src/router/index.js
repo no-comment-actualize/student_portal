@@ -4,6 +4,14 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import StudentsShow from "../views/StudentsShow.vue";
+import EducationsEdit from "../views/EducationsEdit.vue";
+import ExperiencesEdit from "../views/ExperiencesEdit.vue";
+import EducationsNew from "../views/EducationsNew.vue";
+import ExperiencesNew from "../views/ExperiencesNew.vue";
+import CapstonesNew from "../views/CapstonesNew.vue";
+import SkillsNew from "../views/SkillsNew.vue";
+import StudentsEdit from "../views/StudentsEdit.vue";
+import CapstonesEdit from "../views/CapstonesEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -33,9 +41,49 @@ const routes = [
     component: Logout
   },
   {
+    path: "/experiences/new",
+    name: "experiences-new",
+    component: ExperiencesNew
+  },
+  {
+    path: "/educations/new",
+    name: "educations-new",
+    component: EducationsNew
+  },
+  {
+    path: "/capstones/new",
+    name: "capstones-new",
+    component: CapstonesNew
+  },
+  {
+    path: "/skills/new",
+    name: "skills-new",
+    component: SkillsNew
+  },
+  {
+    path: "/experiences/:id/edit",
+    name: "experiences-edit",
+    component: ExperiencesEdit
+  },
+  {
+    path: "/educations/:id/edit",
+    name: "educations-edit",
+    component: EducationsEdit
+  },
+  {
     path: "/students/:id",
-    name: "student-show",
+    name: "students-show",
     component: StudentsShow
+  },
+  {
+    path: "/students/:id/edit",
+    name: "students-edit",
+    component: StudentsEdit
+  },
+  {
+    path: "/capstones/:id/edit",
+    name: "capstones-edit",
+    component: CapstonesEdit
   }
 ];
 

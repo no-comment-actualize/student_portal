@@ -1,17 +1,44 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link :to="`/students/${student_id}`">Student</router-link>
       |
       <router-link to="/about">About</router-link>
       |
-      <router-link to="/login">Login</router-link>
+      <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
       |
-      <router-link to="/logout">Logout</router-link>
+      <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
+      |
+      <router-link :to="`/students/${student_id}/edit`">Student Edit</router-link>
+      |
+      <router-link :to="`/capstones/${student_id}/edit`">Captone Edit</router-link>
+      |
+      <router-link :to="`/experiences/${student_id}/edit`">Experiences Edit</router-link>
+      |
+      <router-link :to="`/educations/${student_id}/edit`">Education Edit</router-link>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      student_id: localStorage.getItem("student_id")
+    };
+  },
+  methods: {
+    isLoggedIn: function() {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+};
+</script>
 
 <style>
 #app {
