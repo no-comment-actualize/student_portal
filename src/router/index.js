@@ -6,6 +6,8 @@ import Logout from "../views/Logout.vue";
 import StudentsShow from "../views/StudentsShow.vue";
 import EducationsEdit from "../views/EducationsEdit.vue";
 import ExperiencesEdit from "../views/ExperiencesEdit.vue";
+import EducationsNew from "../views/EducationsNew.vue";
+import ExperiencesNew from "../views/ExperiencesNew.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
 import CapstonesEdit from "../views/CapstonesEdit.vue";
 
@@ -35,6 +37,16 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout
+  },
+  {
+    path: "/experiences/new",
+    name: "experiences-new",
+    component: ExperiencesNew
+  },
+  {
+    path: "/educations/new",
+    name: "educations-new",
+    component: EducationsNew
   },
   {
     path: "/experiences/:id/edit",
