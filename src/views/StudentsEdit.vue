@@ -74,8 +74,7 @@ export default {
   data: function() {
     return {
       student: {},
-      errors: [],
-      student_id: localStorage.getItem("student_id")
+      errors: []
     };
   },
   created: function() {

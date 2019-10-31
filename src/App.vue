@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link :to="`/students/${student_id}`">Student</router-link>
       |
       <router-link to="/about">About</router-link>
       |
@@ -9,9 +9,13 @@
       |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
       |
-      <router-link to="/students/1/edit">Student Edit</router-link>
+      <router-link :to="`/students/${student_id}/edit`">Student Edit</router-link>
       |
-      <router-link to="/capstones/1/edit">Captone Edit</router-link>
+      <router-link :to="`/capstones/${student_id}/edit`">Captone Edit</router-link>
+      |
+      <router-link :to="`/experiences/${student_id}/edit`">Experiences Edit</router-link>
+      |
+      <router-link :to="`/educations/${student_id}/edit`">Education Edit</router-link>
     </div>
     <router-view />
   </div>
