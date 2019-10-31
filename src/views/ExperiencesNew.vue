@@ -62,7 +62,7 @@ export default {
         .post("/api/experiences", params)
         .then(response => {
           console.log(response.data);
-          this.$router.push("/students/" + this.student.id);
+          this.$router.push("/students/" + this.student_id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

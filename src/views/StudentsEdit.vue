@@ -74,7 +74,8 @@ export default {
   data: function() {
     return {
       student: {},
-      errors: []
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
   created: function() {
@@ -100,9 +101,9 @@ export default {
       };
 
       axios
-        .patch("/api/students/" + this.student.id, params)
+        .patch("/api/students/" + this.student_id, params)
         .then(response => {
-          this.$router.push("/students/" + this.student.id);
+          this.$router.push("/students/" + this.student_id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

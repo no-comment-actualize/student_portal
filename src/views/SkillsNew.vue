@@ -25,7 +25,8 @@ export default {
   data: function() {
     return {
       name: "",
-      errors: []
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
   created: function() {},
@@ -38,7 +39,7 @@ export default {
         .post("/api/skills", params)
         .then(response => {
           console.log(response.data);
-          this.$router.push("/students/:id");
+          this.$router.push("/students/" + this.student_id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

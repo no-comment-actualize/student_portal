@@ -46,7 +46,8 @@ export default {
   data: function() {
     return {
       education: {},
-      errors: []
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
 
@@ -69,7 +70,7 @@ export default {
       axios
         .post("/api/educations" + this.education.id, params)
         .then(response => {
-          this.$router.push("/students/" + this.education.id);
+          this.$router.push("/students/" + this.student_id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
@@ -78,7 +79,7 @@ export default {
     destoryExperience: function(experience) {
       axios.delete("/api/educations/" + this.education.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/students/" + this.education.id);
+        this.$router.push("/students/" + this.student_id);
       });
     }
   }
