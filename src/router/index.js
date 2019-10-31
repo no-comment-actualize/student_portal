@@ -90,11 +90,6 @@ const routes = [
     path: "/skills/:id/edit",
     name: "skills-edit",
     component: SkillsEdit
-  },
-  {
-    path: "/skills/new",
-    name: "skills-new",
-    component: SkillsNew
   }
 ];
 
