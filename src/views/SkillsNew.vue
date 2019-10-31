@@ -10,11 +10,7 @@
         </ul>
         <div class="form-group">
           <label>Name:</label>
-          <input type="text" class="form-control" v-model="skills.name" />
-        </div>
-        <div class="form-group">
-          <label>Student ID:</label>
-          <input type="integer4" class="form-control" v-model="skills.student_id" />
+          <input type="text" class="form-control" v-model="name" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
@@ -37,11 +33,12 @@ export default {
     submit: function() {
       var params = {
         name: this.name,
-        student_id: this.studentId
+        student_id: 1
       };
       axios
         .post("/api/skills", params)
         .then(response => {
+          console.log(response.data);
           this.$router.push("/students/:id");
         })
         .catch(error => {
