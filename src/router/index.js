@@ -13,7 +13,6 @@ import SkillsNew from "../views/SkillsNew.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
 import CapstonesEdit from "../views/CapstonesEdit.vue";
 import SkillsEdit from "../views/SkillsEdit.vue";
-import SkillsNew from "../views/SkillsNew.vue";
 
 Vue.use(VueRouter);
 
