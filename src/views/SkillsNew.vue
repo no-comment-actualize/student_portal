@@ -15,6 +15,7 @@
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>
+  </div>
 </template>
 
 <script>
@@ -24,7 +25,7 @@ export default {
   data: function() {
     return {
       name: "",
-      student_id: ""
+      student_id: "",
       errors: []
     };
   },
