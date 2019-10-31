@@ -1,5 +1,5 @@
 <template>
-  <div class="experiences-new">
+  <div class="educations-new">
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>
@@ -10,11 +10,11 @@
         </ul>
         <div class="form-group">
           <label>Start Date:</label>
-          <input type="string" class="form-control" v-model="startDate" />
+          <input type="string" class="form-control" v-model="start_date" />
         </div>
         <div class="form-group">
           <label>End Date:</label>
-          <input type="text" class="form-control" v-model="endDate" />
+          <input type="text" class="form-control" v-model="end_date" />
         </div>
         <div class="form-group">
           <label>Degree:</label>
@@ -44,8 +44,9 @@ export default {
       endDate: "",
       degree: "",
       university: "",
-      details: "",
-      errors: []
+      deatils: "",
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
   created: function() {},
@@ -61,8 +62,7 @@ export default {
       axios
         .post("/api/educations", params)
         .then(response => {
-          console.log(response.data);
-          this.$router.push("/students/" + this.student.id);
+          this.$router.push("/students/" + this.student_id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

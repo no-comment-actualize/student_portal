@@ -3,12 +3,11 @@
     <div id="nav">
       <router-link :to="`/students/${student_id}`">Student</router-link>
       |
-      <router-link to="/about">About</router-link>
-      |
       <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
       |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
       |
+      <br />
       <router-link :to="`/students/${student_id}/edit`">Student Edit</router-link>
       |
       <router-link :to="`/capstones/${student_id}/edit`">Captone Edit</router-link>
@@ -16,6 +15,9 @@
       <router-link :to="`/experiences/${student_id}/edit`">Experiences Edit</router-link>
       |
       <router-link :to="`/educations/${student_id}/edit`">Education Edit</router-link>
+      |
+      <br />
+      <router-link to="/educations/new">Education New</router-link>
     </div>
     <router-view />
   </div>

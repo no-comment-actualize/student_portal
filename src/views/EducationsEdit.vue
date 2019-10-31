@@ -10,23 +10,23 @@
         </ul>
         <div class="form-group">
           <label>Start Date:</label>
-          <input type="string" class="form-control" v-model="educations.start_date" />
+          <input type="string" class="form-control" v-model="education.start_date" />
         </div>
         <div class="form-group">
           <label>End Date:</label>
-          <input type="text" class="form-control" v-model="educations.end_date" />
+          <input type="text" class="form-control" v-model="education.end_date" />
         </div>
         <div class="form-group">
           <label>Degree:</label>
-          <input type="string" class="form-control" v-model="educations.degree" />
+          <input type="string" class="form-control" v-model="education.degree" />
         </div>
         <div class="form-group">
           <label>University:</label>
-          <input type="string" class="form-control" v-model="educations.university" />
+          <input type="string" class="form-control" v-model="education.university" />
         </div>
         <div class="form-group">
           <label>Detials:</label>
-          <input type="text" class="form-control" v-model="educations.details" />
+          <input type="text" class="form-control" v-model="education.details" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
@@ -76,7 +76,7 @@ export default {
         });
     },
     destoryExperience: function(experience) {
-      axios.delete("/api/education/" + this.education.id).then(response => {
+      axios.delete("/api/educations/" + this.education.id).then(response => {
         console.log("Success", response.data);
         this.$router.push("/students/" + this.education.id);
       });

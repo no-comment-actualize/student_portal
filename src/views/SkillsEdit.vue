@@ -10,11 +10,7 @@
         </ul>
         <div class="form-group">
           <label>Name:</label>
-          <input type="string" class="form-control" v-model="skills.name" />
-        </div>
-        <div class="form-group">
-          <label>Student ID:</label>
-          <input type="integer" class="form-control" v-model="skills.student_id" />
+          <input type="string" class="form-control" v-model="skill.name" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
@@ -34,7 +30,8 @@ export default {
   data: function() {
     return {
       skill: {},
-      errors: []
+      errors: [],
+      student_id: localStorage.getItem("student_id")
     };
   },
 
@@ -48,13 +45,12 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        name: this.skill.name,
-        student_id: this.skill.studentId
+        name: this.skill.name
       };
       axios
-        .post("/api/skills", params)
+        .patch("/api/skills/" + this.skill.id, params)
         .then(response => {
-          this.$router.push("/students/" + this.skill.id);
+          this.$router.push("/students/" + this.student_id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
@@ -63,7 +59,7 @@ export default {
     destorySkill: function(skill) {
       axios.delete("/api/skills/" + this.education.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/students/" + this.skill.id);
+        this.$router.push("/students/" + this.student_id);
       });
     }
   }
