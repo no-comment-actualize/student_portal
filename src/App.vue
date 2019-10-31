@@ -5,13 +5,36 @@
       |
       <router-link to="/about">About</router-link>
       |
-      <router-link to="/login">Login</router-link>
+      <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
       |
-      <router-link to="/logout">Logout</router-link>
+      <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
+      |
+      <router-link to="/students/1/edit">Student Edit</router-link>
+      |
+      <router-link to="/capstones/1/edit">Captone Edit</router-link>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      student_id: localStorage.getItem("student_id")
+    };
+  },
+  methods: {
+    isLoggedIn: function() {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+};
+</script>
 
 <style>
 #app {
