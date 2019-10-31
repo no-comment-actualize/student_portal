@@ -25,7 +25,6 @@ export default {
   data: function() {
     return {
       name: "",
-      student_id: "",
       errors: []
     };
   },
@@ -33,8 +32,7 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
-        student_id: 1
+        name: this.name
       };
       axios
         .post("/api/skills", params)

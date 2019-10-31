@@ -45,7 +45,6 @@ export default {
       jobTitle: "",
       company: "",
       details: "",
-      studentId: "",
       errors: []
     };
   },
@@ -57,8 +56,7 @@ export default {
         end_date: this.endDate,
         job_title: this.jobTitle,
         company: this.company,
-        details: this.details,
-        student_id: 1
+        details: this.details
       };
       axios
         .post("/api/experiences", params)

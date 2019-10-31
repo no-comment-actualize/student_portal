@@ -43,8 +43,7 @@ export default {
   data: function() {
     return {
       capstone: {},
-      errors: [],
-      student_id: localStorage.getItem("student_id")
+      errors: []
     };
   },
   created: function() {
