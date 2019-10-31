@@ -68,7 +68,7 @@ export default {
         deatils: this.education.deatils
       };
       axios
-        .post("/api/educations" + this.education.id, params)
+        .patch("/api/educations" + this.education.id, params)
         .then(response => {
           this.$router.push("/students/" + this.student_id);
         })

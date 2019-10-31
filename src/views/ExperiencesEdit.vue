@@ -69,7 +69,7 @@ export default {
         student_id: this.experience.studentId
       };
       axios
-        .post("/api/experiences/" + this.experience.id, params)
+        .patch("/api/experiences/" + this.experience.id, params)
         .then(response => {
           this.$router.push("/students/" + this.student_id);
         })
