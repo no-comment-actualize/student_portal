@@ -74,7 +74,7 @@ export default {
     destroyCapstone: function() {
       axios.delete("/api/capstones/" + this.capstone.id).then(response => {
         console.log("Success", response.data);
-        this.$router.push("/students/");
+        this.$router.push("/students/" + this.student_id);
       });
     }
   }
