@@ -32,12 +32,12 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
-        student_id: this.studentId
+        name: this.name
       };
       axios
         .post("/api/skills", params)
         .then(response => {
+          console.log(response.data);
           this.$router.push("/students/:id");
         })
         .catch(error => {

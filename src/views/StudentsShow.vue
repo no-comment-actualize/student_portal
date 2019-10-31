@@ -12,6 +12,7 @@
     <h2>{{ student.github }}</h2>
     <h2>{{ student.photo }}</h2>
     <router-link :to="`/students/${student.id}/edit`">Edit Student Information</router-link>
+
     <h1>Capstones</h1>
     <div v-for="capstone in student.capstones">
       <h2>{{ capstone.name }}</h2>
@@ -19,7 +20,9 @@
       <h2>{{ capstone.url }}</h2>
       <h2>{{ capstone.screenshot }}</h2>
       <h2>{{ capstone.student_id }}</h2>
-      <router-link :to="`/capstones/${capstone.id}/edit`">Edit Student Information</router-link>
+      <router-link :to="`/capstones/${capstone.id}/edit`">Edit Capstone Information</router-link>
+      |
+      <router-link to="/capstones/new">New Capstone Information</router-link>
     </div>
     <h1>Education</h1>
     <div v-for="education in student.educations">
@@ -29,7 +32,9 @@
       <h2>{{ education.university }}</h2>
       <h2>{{ education.details }}</h2>
       <h2>{{ education.student_id }}</h2>
-      <router-link :to="`/educations/${education.id}/edit`">Edit Student Information</router-link>
+      <router-link :to="`/educations/${education.id}/edit`">Edit Education Information</router-link>
+      |
+      <router-link to="/educations/new">New Education Information</router-link>
     </div>
     <h1>Experience</h1>
     <div v-for="experience in student.experiences">
@@ -39,13 +44,19 @@
       <h2>{{ experience.job_title }}</h2>
       <h2>{{ experience.details }}</h2>
       <h2>{{ experience.student_id }}</h2>
-      <router-link :to="`/experiences/${experience.id}/edit`">Edit Student Information</router-link>
+
+      <router-link :to="`/experiences/${experience.id}/edit`">Edit Experience Information</router-link>
+      |
+      <router-link to="/experiences/new">New Experience Information</router-link>
     </div>
     <h1>Skill</h1>
     <div v-for="skill in student.skills">
       <h2>{{ skill.name }}</h2>
       <h2>{{ skill.student_id }}</h2>
-      <router-link :to="`/skills/${skill.id}/edit`">Edit Student Information</router-link>
+
+      <router-link :to="`/skills/${skill.id}/edit`">Edit Skills Information</router-link>
+      |
+      <router-link to="/skills/new">New Skills Information</router-link>
     </div>
   </div>
 </template>

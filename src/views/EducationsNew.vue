@@ -57,7 +57,7 @@ export default {
         end_date: this.endDate,
         degree: this.degree,
         university: this.university,
-        deatils: this.deatils
+        details: this.details
       };
       axios
         .post("/api/educations", params)
