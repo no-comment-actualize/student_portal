@@ -40,7 +40,6 @@ export default {
       description: "",
       url: "",
       screenshot: "",
-      studentId: "",
       errors: []
     };
   },
@@ -51,8 +50,7 @@ export default {
         name: this.name,
         description: this.description,
         url: this.url,
-        screenshot: this.screenshot,
-        student_id: 1
+        screenshot: this.screenshot
       };
       axios
         .post("/api/capstones", params)
