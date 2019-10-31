@@ -10,23 +10,23 @@
         </ul>
         <div class="form-group">
           <label>Start Date:</label>
-          <input type="string" class="form-control" v-model="educations.start_date" />
+          <input type="string" class="form-control" v-model="startDate" />
         </div>
         <div class="form-group">
           <label>End Date:</label>
-          <input type="text" class="form-control" v-model="educations.end_date" />
+          <input type="text" class="form-control" v-model="endDate" />
         </div>
         <div class="form-group">
           <label>Degree:</label>
-          <input type="string" class="form-control" v-model="educations.degree" />
+          <input type="string" class="form-control" v-model="degree" />
         </div>
         <div class="form-group">
           <label>University:</label>
-          <input type="string" class="form-control" v-model="educations.university" />
+          <input type="string" class="form-control" v-model="university" />
         </div>
         <div class="form-group">
           <label>Detials:</label>
-          <input type="text" class="form-control" v-model="educations.details" />
+          <input type="text" class="form-control" v-model="details" />
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
@@ -40,8 +40,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      start_date: "",
-      end_date: "",
+      startDate: "",
+      endDate: "",
       degree: "",
       university: "",
       deatils: "",
@@ -61,6 +61,7 @@ export default {
       axios
         .post("/api/educations", params)
         .then(response => {
+          console.log(response.data);
           this.$router.push("/students/" + this.student.id);
         })
         .catch(error => {
