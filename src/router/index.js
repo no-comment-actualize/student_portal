@@ -3,13 +3,11 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
-<<<<<<< HEAD
 import StudentsShow from "../views/StudentsShow.vue";
 import EducationsEdit from "../views/EducationsEdit.vue";
 import ExperiencesEdit from "../views/ExperiencesEdit.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
 import CapstonesEdit from "../views/CapstonesEdit.vue";
-
 
 Vue.use(VueRouter);
 
@@ -39,7 +37,6 @@ const routes = [
     component: Logout
   },
   {
-
     path: "/experiences/:id/edit",
     name: "experiences-edit",
     component: ExperiencesEdit
@@ -53,7 +50,8 @@ const routes = [
     path: "/students/:id",
     name: "students-show",
     component: StudentsShow
-
+  },
+  {
     path: "/students/:id/edit",
     name: "students-edit",
     component: StudentsEdit
