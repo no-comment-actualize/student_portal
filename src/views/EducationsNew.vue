@@ -3,7 +3,7 @@
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>
-       <New>Add Education</New>
+          <New>Add Education</New>
         </h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -31,6 +31,7 @@
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>
+  </div>
 </template>
 
 <script>
